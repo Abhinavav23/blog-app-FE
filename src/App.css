@@ -17,6 +17,17 @@
   padding: 1rem;
 }
 
+button{
+  padding: 0.25rem 0.5rem;
+  border: none;
+  background-color: #0093bc;
+  color: #fff;
+  border-radius: 0.25rem;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
 .link-container {
   display: flex;
   justify-content: space-between;
@@ -45,6 +56,36 @@
   > div > input {
     padding: 0.25rem 0.5rem;
   }
+}
+
+.blog-container{
+  margin: 2rem;
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  border-radius: 0.25rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+  &:hover{
+    cursor: pointer;
+    background-color: #a4a4a4;
+  }
+}
+
+.create-blog-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background-color:brown;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  /* >button{
+    width: 5rem;
+  } */
 }
 
 /* .link-container > li {

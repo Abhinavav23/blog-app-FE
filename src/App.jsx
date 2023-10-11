@@ -5,6 +5,7 @@ import { Home } from "./components/Home";
 import { Profile } from "./components/profile/Profile";
 import { Login } from "./components/auth/Login";
 import { Signup } from "./components/auth/Signup";
+import { CreteBlog } from "./components/CreteBlog";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/create" element={<CreteBlog />} />
       </Routes>
     </div>
   );

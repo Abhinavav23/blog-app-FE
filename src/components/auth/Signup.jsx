@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Signup = () => {
   const initialVal = {
@@ -10,6 +11,7 @@ export const Signup = () => {
   };
 
   const [userInfo, setUserInfo] = useState(initialVal);
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -33,6 +35,7 @@ export const Signup = () => {
       );
       const data = await res.json();
       console.log("data", data);
+      navigate("/login");
     } catch (err) {
       console.log("err", err);
     }
@@ -46,6 +49,7 @@ export const Signup = () => {
           type="text"
           name="firstName"
           id="firstName"
+          value={userInfo.firstName.toUpperCase()}
           onChange={handleInputChange}
         />
       </div>
@@ -55,6 +59,7 @@ export const Signup = () => {
           type="text"
           name="lastName"
           id="lastName"
+          value={userInfo.lastName.toUpperCase()}
           onChange={handleInputChange}
         />
       </div>
@@ -64,6 +69,7 @@ export const Signup = () => {
           type="text"
           name="username"
           id="username"
+          value={userInfo.username.toLowerCase()}
           onChange={handleInputChange}
         />
       </div>
@@ -73,6 +79,7 @@ export const Signup = () => {
           type="email"
           name="email"
           id="email"
+          value={userInfo.email}
           onChange={handleInputChange}
         />
       </div>
@@ -82,6 +89,7 @@ export const Signup = () => {
           type="password"
           name="password"
           id="password"
+          value={userInfo.password}
           onChange={handleInputChange}
         />
       </div>
