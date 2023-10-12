@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { isLoggedIn } from "../../utils/storage";
 
 export const Navbar = () => {
   return (
@@ -8,11 +9,13 @@ export const Navbar = () => {
         <li>
           <NavLink to="/home">Home</NavLink>
         </li>
+
         <li>
-          <NavLink to="/profile">Profile</NavLink>
-        </li>
-        <li>
-          <NavLink to="/login">Login</NavLink>
+          {isLoggedIn() ? (
+            <NavLink to="/profile">Profile</NavLink>
+          ) : (
+            <NavLink to="/login">Login</NavLink>
+          )}
         </li>
       </ul>
     </nav>

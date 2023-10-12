@@ -6,6 +6,7 @@ import { Profile } from "./components/profile/Profile";
 import { Login } from "./components/auth/Login";
 import { Signup } from "./components/auth/Signup";
 import { CreteBlog } from "./components/CreteBlog";
+import { BlogDetails } from "./components/blog/BlogDetails";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/create" element={<CreteBlog />} />
+        <Route path="/blog/:blogId" element={<BlogDetails />} />
       </Routes>
     </div>
   );

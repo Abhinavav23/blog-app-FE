@@ -88,6 +88,14 @@ button{
   } */
 }
 
+.profile-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
 /* .link-container > li {
   list-style-type: none;
 } */

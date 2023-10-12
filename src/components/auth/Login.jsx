@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { post } from "../../services/api";
+import { setToken } from "../../utils/storage";
 
 export const Login = () => {
   const initialUserInfo = {
@@ -17,15 +19,10 @@ export const Login = () => {
 
   const handleForm = async(e) => {
     e.preventDefault();
-    console.log('userInfo', userInfo);
     try{
-      const response = await axios.post('http://localhost:5500/api/v1/auth/login', userInfo);
-      console.log('response', response.data);
-      const token = response.data.token;
-      if(token){
-        sessionStorage.setItem('userToken', token);
-        navigate("/home");
-      }
+      const data = await post("/auth/login", userInfo);
+      setToken(data.token);
+      navigate("/home");
     }catch(err){
       console.log('err', err);
     }

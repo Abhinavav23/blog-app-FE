@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Blog } from "./Blog";
+import { Blog } from "./blog/Blog";
 import { useNavigate } from "react-router-dom";
+import { get } from "../services/api";
 
 export const Home = () => {
   const [blogs, setBlogs] = useState([]);
@@ -10,18 +11,9 @@ export const Home = () => {
 
   const fetchAllBlogs = async () => {
     setIsLoading(true);
-    const token = sessionStorage.getItem("userToken");
-    const config = {
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
-    };
     try {
-      const response = await axios.get(
-        "http://localhost:5500/api/v1/blog/all",
-        config
-      );
-      setBlogs(response.data.data);
+      const blogData = await get("/blog/all");
+      setBlogs(blogData.data);
     } catch (err) {
       console.log(err);
     } finally {
@@ -43,7 +35,8 @@ export const Home = () => {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        blogs && blogs.map((blog) => <Blog key={blog._id} {...blog} />)
+        blogs.length > 0 &&
+        blogs.map((blog) => <Blog key={blog._id} {...blog} />)
       )}
     </main>
   );
