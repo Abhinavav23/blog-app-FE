@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { get } from "../../services/api";
 import { removeToken } from "../../utils/storage";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink, Outlet } from "react-router-dom";
 
 export const Profile = () => {
   const [profileInfo, setProfileInfo] = useState({
@@ -31,12 +31,17 @@ export const Profile = () => {
   };
 
   return (
-    <section className="profile-container">
+    <section className="container">
       <h2>Profile Info</h2>
+      
       <p>Email: {profileInfo.email}</p>
       <p>Username: {profileInfo.username}</p>
       <p>No of Blogs written: {profileInfo.blog.length}</p>
+      <NavLink to="myblogs">My Blogs </NavLink> 
+      <NavLink to="myComments">My comments </NavLink>
       <button onClick={logout}>Logout</button>
+
+      <Outlet/>
     </section>
   );
 };

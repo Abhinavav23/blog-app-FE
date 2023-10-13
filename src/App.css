@@ -17,15 +17,20 @@
   padding: 1rem;
 }
 
-button{
+button {
   padding: 0.25rem 0.5rem;
   border: none;
   background-color: #0093bc;
   color: #fff;
   border-radius: 0.25rem;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
+  margin: 0 0.5rem;
+}
+
+input {
+  padding: 0.25rem 0.5rem;
 }
 
 .link-container {
@@ -53,12 +58,9 @@ button{
   flex-direction: column;
   gap: 1rem;
   margin: 2rem;
-  > div > input {
-    padding: 0.25rem 0.5rem;
-  }
 }
 
-.blog-container{
+.blog-container {
   margin: 2rem;
   padding: 2rem;
   display: flex;
@@ -68,18 +70,18 @@ button{
   justify-content: center;
   align-items: center;
   background-color: #ddd;
-  &:hover{
+  &:hover {
     cursor: pointer;
     background-color: #a4a4a4;
   }
 }
 
-.create-blog-container{
+.create-blog-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 2rem;
-  background-color:brown;
+  background-color: brown;
   color: #fff;
   align-items: center;
   justify-content: center;
@@ -88,13 +90,27 @@ button{
   } */
 }
 
-.profile-container{
+.container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
   align-items: center;
 }
+
+.add-comment-container{
+  padding: 1rem;
+  border: 1px solid #ddd;
+  width: 20rem
+}
+
+.comment-container{
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
 
 /* .link-container > li {
   list-style-type: none;

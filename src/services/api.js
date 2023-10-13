@@ -2,7 +2,7 @@ import axios from "axios";
 
 const baseUrl = "http://localhost:5500/api/v1";
 
-const getConfig = () => {
+export const getConfig = () => {
   const token = sessionStorage.getItem("userToken");
   return {
     headers: {

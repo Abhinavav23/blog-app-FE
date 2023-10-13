@@ -7,6 +7,8 @@ import { Login } from "./components/auth/Login";
 import { Signup } from "./components/auth/Signup";
 import { CreteBlog } from "./components/CreteBlog";
 import { BlogDetails } from "./components/blog/BlogDetails";
+import { MyBlog } from "./components/blog/MyBlog";
+import { MyComment } from "./components/blog/MyComment";
 
 function App() {
   return (
@@ -15,7 +17,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/*" element={<Profile />} >
+          <Route path="myblogs" element={<MyBlog/>}/>
+          <Route path="mycomments" element={<MyComment/>}/>
+        </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/create" element={<CreteBlog />} />
